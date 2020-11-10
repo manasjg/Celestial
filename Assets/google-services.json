@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "756112456064",
+    "firebase_url": "https://celestial-ab79a.firebaseio.com",
+    "project_id": "celestial-ab79a",
+    "storage_bucket": "celestial-ab79a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756112456064:android:a9fed0da78ecb5b262a965",
+        "android_client_info": {
+          "package_name": "com.ATA.NewCelestial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756112456064-7048rmf5n98brrn6r1irbcigkvdd14ia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCzZ_cdsXoF4rDxsiiEZgLIlB6efUWHIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756112456064-7048rmf5n98brrn6r1irbcigkvdd14ia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

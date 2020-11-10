@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: ec4dddc1a4084434d87383c06bbca2cb
+timeCreated: 1501045542
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Callisto4
+    100002: Callisto_Orbit
+    100004: Charon
+    100006: Charon_Orbit
+    100008: Enceladus
+    100010: Enceladus_Orbit
+    100012: Europa
+    100014: Europa_Orbit
+    100016: Genymede
+    100018: Genymede_Orbit
+    100020: Io
+    100022: Io_Orbit
+    100024: Jupiter
+    100026: Jupiter_Orbit
+    100028: Neptune
+    100030: Neptune_Orbit
+    100032: Pluto
+    100034: Pluto_Orbit
+    100036: Saturn
+    100038: Saturn_Orbit
+    100040: Sedna
+    100042: Sedna_Orbit
+    100044: //RootNode
+    100046: Titan
+    100048: Titan_Orbit
+    100050: Triton
+    100052: Triton_Orbit
+    400000: Callisto4
+    400002: Callisto_Orbit
+    400004: Charon
+    400006: Charon_Orbit
+    400008: Enceladus
+    400010: Enceladus_Orbit
+    400012: Europa
+    400014: Europa_Orbit
+    400016: Genymede
+    400018: Genymede_Orbit
+    400020: Io
+    400022: Io_Orbit
+    400024: Jupiter
+    400026: Jupiter_Orbit
+    400028: Neptune
+    400030: Neptune_Orbit
+    400032: Pluto
+    400034: Pluto_Orbit
+    400036: Saturn
+    400038: Saturn_Orbit
+    400040: Sedna
+    400042: Sedna_Orbit
+    400044: //RootNode
+    400046: Titan
+    400048: Titan_Orbit
+    400050: Triton
+    400052: Triton_Orbit
+    2300000: Callisto4
+    2300002: Callisto_Orbit
+    2300004: Charon
+    2300006: Charon_Orbit
+    2300008: Enceladus
+    2300010: Enceladus_Orbit
+    2300012: Europa
+    2300014: Europa_Orbit
+    2300016: Genymede
+    2300018: Genymede_Orbit
+    2300020: Io
+    2300022: Io_Orbit
+    2300024: Jupiter
+    2300026: Jupiter_Orbit
+    2300028: Neptune
+    2300030: Neptune_Orbit
+    2300032: Pluto
+    2300034: Pluto_Orbit
+    2300036: Saturn
+    2300038: Saturn_Orbit
+    2300040: Sedna
+    2300042: Sedna_Orbit
+    2300044: Titan
+    2300046: Titan_Orbit
+    2300048: Triton
+    2300050: Triton_Orbit
+    3300000: Callisto4
+    3300002: Callisto_Orbit
+    3300004: Charon
+    3300006: Charon_Orbit
+    3300008: Enceladus
+    3300010: Enceladus_Orbit
+    3300012: Europa
+    3300014: Europa_Orbit
+    3300016: Genymede
+    3300018: Genymede_Orbit
+    3300020: Io
+    3300022: Io_Orbit
+    3300024: Jupiter
+    3300026: Jupiter_Orbit
+    3300028: Neptune
+    3300030: Neptune_Orbit
+    3300032: Pluto
+    3300034: Pluto_Orbit
+    3300036: Saturn
+    3300038: Saturn_Orbit
+    3300040: Sedna
+    3300042: Sedna_Orbit
+    3300044: Titan
+    3300046: Titan_Orbit
+    3300048: Triton
+    3300050: Triton_Orbit
+    4300000: Jupiter
+    4300002: Saturn
+    4300004: Neptune
+    4300006: Pluto
+    4300008: Genymede
+    4300010: Callisto4
+    4300012: Europa
+    4300014: Io
+    4300016: Titan
+    4300018: Enceladus
+    4300020: Triton
+    4300022: Charon
+    4300024: Sedna
+    4300026: Jupiter_Orbit
+    4300028: Saturn_Orbit
+    4300030: Neptune_Orbit
+    4300032: Pluto_Orbit
+    4300034: Genymede_Orbit
+    4300036: Callisto_Orbit
+    4300038: Europa_Orbit
+    4300040: Io_Orbit
+    4300042: Titan_Orbit
+    4300044: Enceladus_Orbit
+    4300046: Triton_Orbit
+    4300048: Charon_Orbit
+    4300050: Sedna_Orbit
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

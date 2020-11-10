@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 61e7bd550da994e68bdc54f1ef9d03f5
+timeCreated: 1492769969
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Chamber
+    100004: Chamber 1
+    100006: Chamber 2
+    100008: Chamber 3
+    100010: Extra
+    100012: Extra 1
+    100014: Extra 2
+    100016: Extra 3
+    100018: Fan
+    100020: Fan 1
+    100022: Fan 2
+    100024: Fan 3
+    100026: Fan_Cover
+    100028: Fan_Cover 1
+    100030: Fan_Cover 2
+    100032: Fan_Cover 3
+    100034: group4
+    100036: group6
+    100038: group7
+    100040: group8
+    100042: Leg
+    100044: Leg 1
+    100046: Leg 2
+    100048: Leg 3
+    100050: Main_Body
+    400000: //RootNode
+    400002: Chamber
+    400004: Chamber 1
+    400006: Chamber 2
+    400008: Chamber 3
+    400010: Extra
+    400012: Extra 1
+    400014: Extra 2
+    400016: Extra 3
+    400018: Fan
+    400020: Fan 1
+    400022: Fan 2
+    400024: Fan 3
+    400026: Fan_Cover
+    400028: Fan_Cover 1
+    400030: Fan_Cover 2
+    400032: Fan_Cover 3
+    400034: group4
+    400036: group6
+    400038: group7
+    400040: group8
+    400042: Leg
+    400044: Leg 1
+    400046: Leg 2
+    400048: Leg 3
+    400050: Main_Body
+    2300000: Chamber
+    2300002: Chamber 1
+    2300004: Chamber 2
+    2300006: Chamber 3
+    2300008: Extra
+    2300010: Extra 1
+    2300012: Extra 2
+    2300014: Extra 3
+    2300016: Fan
+    2300018: Fan 1
+    2300020: Fan 2
+    2300022: Fan 3
+    2300024: Fan_Cover
+    2300026: Fan_Cover 1
+    2300028: Fan_Cover 2
+    2300030: Fan_Cover 3
+    2300032: Leg
+    2300034: Leg 1
+    2300036: Leg 2
+    2300038: Leg 3
+    2300040: Main_Body
+    3300000: Chamber
+    3300002: Chamber 1
+    3300004: Chamber 2
+    3300006: Chamber 3
+    3300008: Extra
+    3300010: Extra 1
+    3300012: Extra 2
+    3300014: Extra 3
+    3300016: Fan
+    3300018: Fan 1
+    3300020: Fan 2
+    3300022: Fan 3
+    3300024: Fan_Cover
+    3300026: Fan_Cover 1
+    3300028: Fan_Cover 2
+    3300030: Fan_Cover 3
+    3300032: Leg
+    3300034: Leg 1
+    3300036: Leg 2
+    3300038: Leg 3
+    3300040: Main_Body
+    4300000: Chamber
+    4300002: Fan_Cover
+    4300004: Fan
+    4300006: Leg
+    4300008: Extra
+    4300010: Main_Body
+    4300012: Chamber
+    4300014: Fan_Cover
+    4300016: Fan
+    4300018: Leg
+    4300020: Extra
+    4300022: Chamber
+    4300024: Fan_Cover
+    4300026: Fan
+    4300028: Leg
+    4300030: Extra
+    4300032: Chamber
+    4300034: Fan_Cover
+    4300036: Fan
+    4300038: Leg
+    4300040: Extra
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

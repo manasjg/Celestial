@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: ae3d9f27d3124483ba89178328cc3c96
+timeCreated: 1492769971
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base
+    100002: Handle_2
+    100004: Handle_3
+    100006: Hexagon
+    100008: Hexagon 1
+    100010: Hexagon 2
+    100012: Hexagon 3
+    100014: Hexagon 4
+    100016: Hexagon 5
+    100018: Hexagon 6
+    100020: Panel
+    100022: Panel 1
+    100024: Panel 2
+    100026: Panel 3
+    100028: Panel 4
+    100030: Panel 5
+    100032: Panel 6
+    100034: Pillar_1
+    100036: Pillar_2
+    100038: Pillar_3
+    100040: Pillar_4
+    100042: Pipe
+    100044: Rotater
+    100046: Rotater 1
+    100048: Sec_1
+    100050: Sec_2
+    100052: Sec_3
+    100054: Sec_4
+    100056: Sec_5
+    100058: Sec_6
+    100060: Sec_7
+    100062: Set_of_7
+    100064: //RootNode
+    100066: Storage
+    100068: Tank
+    400000: Base
+    400002: Handle_2
+    400004: Handle_3
+    400006: Hexagon
+    400008: Hexagon 1
+    400010: Hexagon 2
+    400012: Hexagon 3
+    400014: Hexagon 4
+    400016: Hexagon 5
+    400018: Hexagon 6
+    400020: Panel
+    400022: Panel 1
+    400024: Panel 2
+    400026: Panel 3
+    400028: Panel 4
+    400030: Panel 5
+    400032: Panel 6
+    400034: Pillar_1
+    400036: Pillar_2
+    400038: Pillar_3
+    400040: Pillar_4
+    400042: Pipe
+    400044: Rotater
+    400046: Rotater 1
+    400048: Sec_1
+    400050: Sec_2
+    400052: Sec_3
+    400054: Sec_4
+    400056: Sec_5
+    400058: Sec_6
+    400060: Sec_7
+    400062: Set_of_7
+    400064: //RootNode
+    400066: Storage
+    400068: Tank
+    2300000: Base
+    2300002: Handle_2
+    2300004: Handle_3
+    2300006: Hexagon
+    2300008: Hexagon 1
+    2300010: Hexagon 2
+    2300012: Hexagon 3
+    2300014: Hexagon 4
+    2300016: Hexagon 5
+    2300018: Hexagon 6
+    2300020: Panel
+    2300022: Panel 1
+    2300024: Panel 2
+    2300026: Panel 3
+    2300028: Panel 4
+    2300030: Panel 5
+    2300032: Panel 6
+    2300034: Pillar_1
+    2300036: Pillar_2
+    2300038: Pillar_3
+    2300040: Pillar_4
+    2300042: Pipe
+    2300044: Rotater 1
+    2300046: Storage
+    2300048: Tank
+    3300000: Base
+    3300002: Handle_2
+    3300004: Handle_3
+    3300006: Hexagon
+    3300008: Hexagon 1
+    3300010: Hexagon 2
+    3300012: Hexagon 3
+    3300014: Hexagon 4
+    3300016: Hexagon 5
+    3300018: Hexagon 6
+    3300020: Panel
+    3300022: Panel 1
+    3300024: Panel 2
+    3300026: Panel 3
+    3300028: Panel 4
+    3300030: Panel 5
+    3300032: Panel 6
+    3300034: Pillar_1
+    3300036: Pillar_2
+    3300038: Pillar_3
+    3300040: Pillar_4
+    3300042: Pipe
+    3300044: Rotater 1
+    3300046: Storage
+    3300048: Tank
+    4300000: Base
+    4300002: Pillar_1
+    4300004: Pillar_2
+    4300006: Pillar_3
+    4300008: Pillar_4
+    4300010: Storage
+    4300012: Tank
+    4300014: Pipe
+    4300016: Rotater
+    4300018: Handle_2
+    4300020: Panel
+    4300022: Hexagon
+    4300024: Panel
+    4300026: Hexagon
+    4300028: Panel
+    4300030: Hexagon
+    4300032: Panel
+    4300034: Hexagon
+    4300036: Panel
+    4300038: Hexagon
+    4300040: Panel
+    4300042: Hexagon
+    4300044: Panel
+    4300046: Hexagon
+    4300048: Handle_3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

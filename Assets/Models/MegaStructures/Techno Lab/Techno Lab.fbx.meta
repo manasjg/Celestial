@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: d1e3abb0afcb84fc4a472bca91189d71
+timeCreated: 1492769971
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base
+    100002: Base1
+    100004: Connector
+    100006: Connector 1
+    100008: Connector 2
+    100010: Connector 3
+    100012: Connector 4
+    100014: Connector 5
+    100016: Mid
+    100018: Power_Base
+    100020: Power_Base 1
+    100022: Power_Base 2
+    100024: Power_Base 3
+    100026: Power_Base 4
+    100028: Power_Base 5
+    100030: Power_Mid
+    100032: Power_Mid 1
+    100034: Power_Mid 2
+    100036: Power_Mid 3
+    100038: Power_Mid 4
+    100040: Power_Mid 5
+    100042: Power_Store_1
+    100044: Power_Store_2
+    100046: Power_Store_3
+    100048: Power_Store_4
+    100050: Power_Store_5
+    100052: Power_Store_6
+    100054: Power_TOp
+    100056: Power_TOp 1
+    100058: Power_TOp 2
+    100060: Power_TOp 3
+    100062: Power_TOp 4
+    100064: Power_TOp 5
+    100066: Roof
+    100068: //RootNode
+    100070: TOp_Ligh
+    400000: Base
+    400002: Base1
+    400004: Connector
+    400006: Connector 1
+    400008: Connector 2
+    400010: Connector 3
+    400012: Connector 4
+    400014: Connector 5
+    400016: Mid
+    400018: Power_Base
+    400020: Power_Base 1
+    400022: Power_Base 2
+    400024: Power_Base 3
+    400026: Power_Base 4
+    400028: Power_Base 5
+    400030: Power_Mid
+    400032: Power_Mid 1
+    400034: Power_Mid 2
+    400036: Power_Mid 3
+    400038: Power_Mid 4
+    400040: Power_Mid 5
+    400042: Power_Store_1
+    400044: Power_Store_2
+    400046: Power_Store_3
+    400048: Power_Store_4
+    400050: Power_Store_5
+    400052: Power_Store_6
+    400054: Power_TOp
+    400056: Power_TOp 1
+    400058: Power_TOp 2
+    400060: Power_TOp 3
+    400062: Power_TOp 4
+    400064: Power_TOp 5
+    400066: Roof
+    400068: //RootNode
+    400070: TOp_Ligh
+    2300000: Base
+    2300002: Base1
+    2300004: Connector
+    2300006: Connector 1
+    2300008: Connector 2
+    2300010: Connector 3
+    2300012: Connector 4
+    2300014: Connector 5
+    2300016: Mid
+    2300018: Power_Base
+    2300020: Power_Base 1
+    2300022: Power_Base 2
+    2300024: Power_Base 3
+    2300026: Power_Base 4
+    2300028: Power_Base 5
+    2300030: Power_Mid
+    2300032: Power_Mid 1
+    2300034: Power_Mid 2
+    2300036: Power_Mid 3
+    2300038: Power_Mid 4
+    2300040: Power_Mid 5
+    2300042: Power_TOp
+    2300044: Power_TOp 1
+    2300046: Power_TOp 2
+    2300048: Power_TOp 3
+    2300050: Power_TOp 4
+    2300052: Power_TOp 5
+    2300054: Roof
+    2300056: TOp_Ligh
+    3300000: Base
+    3300002: Base1
+    3300004: Connector
+    3300006: Connector 1
+    3300008: Connector 2
+    3300010: Connector 3
+    3300012: Connector 4
+    3300014: Connector 5
+    3300016: Mid
+    3300018: Power_Base
+    3300020: Power_Base 1
+    3300022: Power_Base 2
+    3300024: Power_Base 3
+    3300026: Power_Base 4
+    3300028: Power_Base 5
+    3300030: Power_Mid
+    3300032: Power_Mid 1
+    3300034: Power_Mid 2
+    3300036: Power_Mid 3
+    3300038: Power_Mid 4
+    3300040: Power_Mid 5
+    3300042: Power_TOp
+    3300044: Power_TOp 1
+    3300046: Power_TOp 2
+    3300048: Power_TOp 3
+    3300050: Power_TOp 4
+    3300052: Power_TOp 5
+    3300054: Roof
+    3300056: TOp_Ligh
+    4300000: Base
+    4300002: Roof
+    4300004: Connector
+    4300006: Power_TOp
+    4300008: Power_Mid
+    4300010: Power_Base
+    4300012: Connector
+    4300014: Power_TOp
+    4300016: Power_Mid
+    4300018: Power_Base
+    4300020: Connector
+    4300022: Power_TOp
+    4300024: Power_Mid
+    4300026: Power_Base
+    4300028: Connector
+    4300030: Power_TOp
+    4300032: Power_Mid
+    4300034: Power_Base
+    4300036: Connector
+    4300038: Power_TOp
+    4300040: Power_Mid
+    4300042: Power_Base
+    4300044: Connector
+    4300046: Power_TOp
+    4300048: Power_Mid
+    4300050: Power_Base
+    4300052: Base1
+    4300054: Mid
+    4300056: TOp_Ligh
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
