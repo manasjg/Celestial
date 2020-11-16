@@ -7,122 +7,112 @@ using UnityEngine.UI;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Vector3 CameraAnimEndPos;
-    Vector3 StartPos;
+    public Vector3 cameraAnimEndPos;
+    private Vector3 startPos;
     public float initAnimTime;
-    float initStartTimer = 0;
-    public GameObject Sun;
-    float DistanceFromSun;
-    bool StartMovement = false;
-    bool SelectedPlanet = false;
-    float YAngle = 0;
-    float XAngle = 0;
-    public float RotateSpeed=5f;
-    float XPos = 0;
-    float YPos = 0;
-    public float PlanetSelectDistance;
-    Vector3 SelectedPlanetEndPos;
-    float SelectedPlanetAnimTime = 2f;
-    float SelectedAnimTimer = 0;
-    GameObject SelectedPlanetGO = null;
-    bool MoveBackToStartPos = false;
-    float MoveBackTimer = 0;
-    float MoveBackTime=2f;
-    float stopMovementTimer;
-    float stopRotationTime = 2f;
-    float DoubleClickTime = 0.3f;
-    float DoubleClickTimer = 0;
-    int numberOfClicks = 0;
-    public GameObject FadePanel;
-    bool PlanetReached = false;
-    public GameObject MoveBackButton;
-    Vector3 RechDiff;
-    bool StartDragFlag=false;
-    public Text DragText;
-    // Start is called before the first frame update
+    private float initStartTimer = 0;
+    public GameObject sun;
+    private float distanceFromSun;
+    private bool startMovement = false;
+    private bool selectedPlanet = false;
+    private float yAngle = 0;
+    private float xAngle = 0;
+    public float rotateSpeed = 2f;
+    private float xPos = 0;
+    private float yPos = 0;
+    public float planetSelectDistance=1f;
+    private Vector3 selectedPlanetEndPos;
+    private float selectedPlanetAnimTime = 2f;
+    private float selectedAnimTimer = 0;
+    private GameObject selectedPlanetGO = null;
+    private bool moveBackToStartPos = false;
+    private float moveBackTimer = 0;
+    private float moveBackTime = 2f;
+    private float stopMovementTimer;
+    private float stopRotationTime = 2f;
+    private float doubleClickTime = 0.3f;
+    private float doubleClickTimer = 0;
+    private int numberOfClicks = 0;
+    public GameObject fadePanel;
+    private bool planetReached = false;
+    public GameObject moveBackButton;
+    private Vector3 rechDiff;
+    bool startDragFlag = false;
+    
+    [SerializeField]
+    PlayerSaveBehavior playerSaveBehavior;
+
     void Start()
     {
-        Time.timeScale=1f;
-        StartPos = transform.position;
-        MoveBackButton.SetActive(false);
+        Time.timeScale = 1f;
+        startPos = transform.position;
+        moveBackButton.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        CameraMovementHandler();
+    }
+
+    void CameraMovementHandler()
     {
         if (initStartTimer < initAnimTime)
         {
             initStartTimer += Time.deltaTime;
-            transform.position = Vector3.Lerp(StartPos, CameraAnimEndPos,Mathf.SmoothStep(0f,1f,initStartTimer/initAnimTime));
-    
-          
-          
+            transform.position = Vector3.Lerp(startPos, cameraAnimEndPos, Mathf.SmoothStep(0f, 1f, initStartTimer / initAnimTime));
         }
-        else if(!StartMovement)
+        else if (!startMovement)
         {
-            Debug.Log("Setting");
-            DistanceFromSun = Vector3.Distance(new Vector3(transform.position.x,0, transform.position.z), new Vector3(Sun.transform.position.x, 0, Sun.transform.position.z));
-            StartMovement = true;
-            YAngle = Mathf.Atan2(Sun.transform.position.z - transform.position.z, Sun.transform.position.x - transform.position.x)*Mathf.Rad2Deg;
-            XAngle = Mathf.Atan2(Sun.transform.position.y - transform.position.y, Sun.transform.position.z - transform.position.z) * Mathf.Rad2Deg;
-
+            distanceFromSun = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(sun.transform.position.x, 0, sun.transform.position.z));
+            startMovement = true;
+            yAngle = Mathf.Atan2(sun.transform.position.z - transform.position.z, sun.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+            xAngle = Mathf.Atan2(sun.transform.position.y - transform.position.y, sun.transform.position.z - transform.position.z) * Mathf.Rad2Deg;
         }
-        if (StartMovement)
+        if (startMovement)
         {
-             
             if (Input.GetMouseButtonDown(0))
             {
-                XPos = Input.mousePosition.x;
-                YPos = Input.mousePosition.y;
+                xPos = Input.mousePosition.x;
+                yPos = Input.mousePosition.y;
                 RaycastHit hit;
-               
+
                 if (!EventSystem.current.IsPointerOverGameObject())
-                { 
+                {
                     if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
                     {
-                        
                         SetSelectedPlanet(hit.transform.gameObject);
                     }
-                   if(Input.touchCount==0)
-                   StartDragFlag = true;
+                    if (Input.touchCount == 0)
+                        startDragFlag = true;
                 }
             }
             if (Input.GetMouseButton(0))
             {
-
-                if (StartDragFlag)
+                if (startDragFlag)
                 {
-                    if (!SelectedPlanet)
+                    if (!selectedPlanet)
                     {
-                        float XDiff = (Input.mousePosition.x - XPos) * 0.01f;
-                        float YDiff = (Input.mousePosition.y - YPos) * 0.01f;
-
-
-
-                        YAngle -= XDiff * Time.deltaTime * RotateSpeed;
-                        float XPosition = Sun.transform.position.x - (Mathf.Cos(YAngle * Mathf.Deg2Rad) * DistanceFromSun);
-                        float ZPosition = Sun.transform.position.z - (Mathf.Sin(YAngle * Mathf.Deg2Rad) * DistanceFromSun);
-                        float YPosition = transform.position.y - (YDiff * RotateSpeed * 0.2f * Time.deltaTime);
-                        YPosition = Mathf.Clamp(YPosition, 1, 4);
-
-                        transform.position = new Vector3(XPosition, YPosition, ZPosition);
-
-
+                        float XDiff = (Input.mousePosition.x - xPos) * 0.01f;
+                        float YDiff = (Input.mousePosition.y - yPos) * 0.01f;
+                        yAngle -= XDiff * Time.deltaTime * rotateSpeed;
+                        float xPosition = sun.transform.position.x - (Mathf.Cos(yAngle * Mathf.Deg2Rad) * distanceFromSun);
+                        float ZPosition = sun.transform.position.z - (Mathf.Sin(yAngle * Mathf.Deg2Rad) * distanceFromSun);
+                        float yPosition = transform.position.y - (YDiff * rotateSpeed * 0.2f * Time.deltaTime);
+                        yPosition = Mathf.Clamp(yPosition, 1, 4);
+                        transform.position = new Vector3(xPosition, yPosition, ZPosition);
                     }
                 }
-               
+
             }
             if (Input.GetMouseButtonUp(0))
             {
-                StartDragFlag = false;
-
+                startDragFlag = false;
             }
-                if (Input.touchCount == 1)
+            if (Input.touchCount == 1)
             {
                 Touch t = Input.GetTouch(0);
-                if(t.phase == TouchPhase.Began)
+                if (t.phase == TouchPhase.Began)
                 {
-                    Debug.Log(EventSystem.current.IsPointerOverGameObject(t.fingerId));
                     if (!IsPointerOverUIObject())
                     {
                         RaycastHit hit;
@@ -130,94 +120,80 @@ public class CameraMovement : MonoBehaviour
                         {
                             SetSelectedPlanet(hit.transform.gameObject);
                         }
-                        StartDragFlag = true;
+                        startDragFlag = true;
                     }
-                    DragText.text = IsPointerOverUIObject().ToString();
                 }
-                if(t.phase == TouchPhase.Moved)
+                if (t.phase == TouchPhase.Moved)
                 {
-                    //Debug.Log(EventSystem.current.IsPointerOverGameObject(t.fingerId));
-                    if (StartDragFlag)
+                    if (startDragFlag)
                     {
-                      
+                        if (!selectedPlanet)
+                        {
+                            yAngle -= t.deltaPosition.x * Time.deltaTime * rotateSpeed;
+                            float xPosition = sun.transform.position.x - Mathf.Cos(yAngle * Mathf.Deg2Rad) * distanceFromSun;
+                            float ZPosition = sun.transform.position.z - Mathf.Sin(yAngle * Mathf.Deg2Rad) * distanceFromSun;
+                            float yPosition = transform.position.y - (t.deltaPosition.y * rotateSpeed * 0.2f * Time.deltaTime);
+                            yPosition = Mathf.Clamp(yPosition, 1, 4);
+                            transform.position = new Vector3(xPosition, yPosition, ZPosition);
+                        }
 
-                            if (!SelectedPlanet)
-                            {
-                                YAngle -= t.deltaPosition.x * Time.deltaTime * RotateSpeed;
-
-
-                                float XPosition = Sun.transform.position.x - Mathf.Cos(YAngle * Mathf.Deg2Rad) * DistanceFromSun;
-                                float ZPosition = Sun.transform.position.z - Mathf.Sin(YAngle * Mathf.Deg2Rad) * DistanceFromSun;
-                                float YPosition = transform.position.y - (t.deltaPosition.y * RotateSpeed * 0.2f * Time.deltaTime);
-                                YPosition = Mathf.Clamp(YPosition, 1, 4);
-                                transform.position = new Vector3(XPosition, YPosition, ZPosition);
-                            }
-                      
                     }
                 }
                 if (t.phase == TouchPhase.Ended)
                 {
-                    StartDragFlag = false;
+                    startDragFlag = false;
                 }
             }
         }
-
-
-
-        if (!SelectedPlanet)
+  
+        if (!selectedPlanet)
         {
-            if (!MoveBackToStartPos)
+            if (!moveBackToStartPos)
             {
-                transform.LookAt(Sun.transform.position);
+                transform.LookAt(sun.transform.position);
             }
-          
         }
         else
         {
-           // transform.LookAt(SelectedPlanetGO.transform.position);
-            if (SelectedAnimTimer < SelectedPlanetAnimTime)
+            // transform.LookAt(SelectedPlanetGO.transform.position);
+            if (selectedAnimTimer < selectedPlanetAnimTime)
             {
-                SelectedAnimTimer += Time.deltaTime;
-             
-                Vector3 targetDirection = SelectedPlanetGO.transform.position - transform.position;
+                selectedAnimTimer += Time.deltaTime;
+
+                Vector3 targetDirection = selectedPlanetGO.transform.position - transform.position;
 
                 // The step size is equal to speed times frame time.
-                float singleStep = RotateSpeed *0.05f* Time.deltaTime;
+                float singleStep = rotateSpeed * 0.05f * Time.deltaTime;
 
                 // Rotate the forward vector towards the target direction by one step
                 Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
 
                 // Draw a ray pointing at our target in
                 Debug.DrawRay(transform.position, newDirection, Color.red);
-               
+
                 // Calculate a rotation a step closer to the target and applies rotation to this object
                 transform.rotation = Quaternion.LookRotation(newDirection);
-                transform.position = Vector3.Lerp(StartPos, SelectedPlanetEndPos, Mathf.SmoothStep(0f, 1f, SelectedAnimTimer / SelectedPlanetAnimTime));
+                transform.position = Vector3.Lerp(startPos, selectedPlanetEndPos, Mathf.SmoothStep(0f, 1f, selectedAnimTimer / selectedPlanetAnimTime));
             }
             else
             {
-              
-                PlanetReached = true;
-
-                MoveBackButton.SetActive(true);
-
-               
+                planetReached = true;
+                moveBackButton.SetActive(true);
             }
         }
 
-
-        if (MoveBackToStartPos)
+        if (moveBackToStartPos)
         {
-            if (MoveBackTimer < MoveBackTime)
+            if (moveBackTimer < moveBackTime)
             {
-                MoveBackTimer += Time.deltaTime;
+                moveBackTimer += Time.deltaTime;
 
-                if (MoveBackTimer < stopRotationTime)
+                if (moveBackTimer < stopRotationTime)
                 {
-                    Vector3 targetDirection = Sun.transform.position - transform.position;
+                    Vector3 targetDirection = sun.transform.position - transform.position;
 
                     // The step size is equal to speed times frame time.
-                    float singleStep = RotateSpeed * 0.05f * Time.deltaTime;
+                    float singleStep = rotateSpeed * 0.05f * Time.deltaTime;
 
                     // Rotate the forward vector towards the target direction by one step
                     Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
@@ -227,12 +203,12 @@ public class CameraMovement : MonoBehaviour
 
                     // Calculate a rotation a step closer to the target and applies rotation to this object
                     transform.rotation = Quaternion.LookRotation(newDirection);
-                    MoveBackButton.SetActive(false);
+                    moveBackButton.SetActive(false);
                 }
                 else
                 {
-                    transform.LookAt(Sun.transform.position);
-                    MoveBackButton.SetActive(false);
+                    transform.LookAt(sun.transform.position);
+                    moveBackButton.SetActive(false);
                     foreach (GameObject GO in GameObject.FindGameObjectsWithTag("CelestialBody"))
                     {
                         if (GO.GetComponent<PlanetRevolver>() != null)
@@ -242,48 +218,52 @@ public class CameraMovement : MonoBehaviour
                     }
 
                 }
-                transform.position = Vector3.Lerp(SelectedPlanetEndPos, StartPos, Mathf.SmoothStep(0f, 1f, MoveBackTimer / MoveBackTime));
+                transform.position = Vector3.Lerp(selectedPlanetEndPos, startPos, Mathf.SmoothStep(0f, 1f, moveBackTimer / moveBackTime));
             }
             else
             {
-                Debug.Log("Start Movement");
-                MoveBackToStartPos = false;
-                DistanceFromSun = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(Sun.transform.position.x, 0, Sun.transform.position.z));
-                StartMovement = true;
-                YAngle = Mathf.Atan2(Sun.transform.position.z - transform.position.z, Sun.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-                XAngle = Mathf.Atan2(Sun.transform.position.y - transform.position.y, Sun.transform.position.z - transform.position.z) * Mathf.Rad2Deg;
-                SelectedPlanet = false;
-                PlanetReached = false;
-                MoveBackButton.SetActive(false);
+                moveBackToStartPos = false;
+                distanceFromSun = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(sun.transform.position.x, 0, sun.transform.position.z));
+                startMovement = true;
+                yAngle = Mathf.Atan2(sun.transform.position.z - transform.position.z, sun.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+                xAngle = Mathf.Atan2(sun.transform.position.y - transform.position.y, sun.transform.position.z - transform.position.z) * Mathf.Rad2Deg;
+                selectedPlanet = false;
+                planetReached = false;
+                moveBackButton.SetActive(false);
             }
         }
 
-
-
-        if (SelectedPlanet && PlanetReached)
+        if (selectedPlanet && planetReached)
         {
-           
+
             if (Input.GetMouseButtonDown(0))
             {
-                XPos = Input.mousePosition.x;
-                YPos = Input.mousePosition.y;
+                xPos = Input.mousePosition.x;
+                yPos = Input.mousePosition.y;
                 RaycastHit hit;
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
                 {
                     numberOfClicks++;
                     if (numberOfClicks == 1)
                     {
-                        DoubleClickTimer = 0;
+                        doubleClickTimer = 0;
                     }
                     if (numberOfClicks > 1)
                     {
-                        Time.timeScale = 0;
-                        PlayerPrefs.SetInt("SelectedPlanet", hit.transform.gameObject.GetComponent<PlanetInfo>().ID);
-                        FadePanel.GetComponent<PanelFadeScript>().SetFade();
+                        PlayerData pData = playerSaveBehavior.GetPlayerData();
+                        for (int i = 0; i < pData.planets.Count; i++)
+                        {
+                            if (pData.planets[i].planetInfo.planetName == hit.transform.gameObject.name)
+                            {
+                                Time.timeScale = 0;
+                                PlayerPrefs.SetInt("SelectedPlanet", hit.transform.gameObject.GetComponent<PlanetInfo>().ID);
+                                fadePanel.GetComponent<PanelFadeScript>().SetFade();
+                            }
+                        }
                     }
                 }
             }
-            
+
             if (Input.touchCount == 1)
             {
                 Touch t = Input.GetTouch(0);
@@ -292,27 +272,33 @@ public class CameraMovement : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(Camera.main.ScreenPointToRay(t.position), out hit, Mathf.Infinity))
                     {
-
                         numberOfClicks++;
                         if (numberOfClicks == 1)
                         {
-                            DoubleClickTimer = 0;
+                            doubleClickTimer = 0;
                         }
                         if (numberOfClicks > 1)
                         {
-                            Time.timeScale = 0;
-                            PlayerPrefs.SetInt("SelectedPlanet",hit.transform.gameObject.GetComponent<PlanetInfo>().ID);
-                         
-                            FadePanel.GetComponent<PanelFadeScript>().SetFade();
+                            PlayerData pData = playerSaveBehavior.GetPlayerData();
+                            for (int i = 0; i < pData.planets.Count; i++)
+                            {
+                                if (pData.planets[i].planetInfo.planetName == hit.transform.gameObject.name)
+                                {
+                                    Time.timeScale = 0;
+                                    PlayerPrefs.SetInt("SelectedPlanet", hit.transform.gameObject.GetComponent<PlanetInfo>().ID);
+                                    fadePanel.GetComponent<PanelFadeScript>().SetFade();
+                                }
+                            }
+
                         }
                     }
                 }
             }
-             if (numberOfClicks == 1)
+            if (numberOfClicks == 1)
             {
-                if (DoubleClickTimer < DoubleClickTime)
+                if (doubleClickTimer < doubleClickTime)
                 {
-                    DoubleClickTimer += Time.deltaTime;
+                    doubleClickTimer += Time.deltaTime;
                 }
                 else
                 {
@@ -320,24 +306,21 @@ public class CameraMovement : MonoBehaviour
                 }
             }
         }
-        
     }
-
-
 
     public void BackToStartPos()
     {
-        if (SelectedPlanet)
+        if (selectedPlanet)
         {
-            MoveBackButton.SetActive(false);
-            MoveBackTimer = 0;
-            StartMovement = false;
-            MoveBackToStartPos = true;
-            PlanetReached = false;
-            float Dist=(Vector3.Distance(SelectedPlanetGO.transform.position, Sun.transform.position));
-            if (Dist < 1)
+            moveBackButton.SetActive(false);
+            moveBackTimer = 0;
+            startMovement = false;
+            moveBackToStartPos = true;
+            planetReached = false;
+            float dist = (Vector3.Distance(selectedPlanetGO.transform.position, sun.transform.position));
+            if (dist < 1)
             {
-                stopRotationTime = 1f + Dist;
+                stopRotationTime = 1f + dist;
             }
             else
             {
@@ -346,29 +329,25 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-
     public void SetSelectedPlanet(GameObject PlanetGO)
     {
-        if (!SelectedPlanet)
+        if (!selectedPlanet)
         {
-            SelectedPlanet = true;
-            SelectedAnimTimer = 0;
-            SelectedPlanetGO = PlanetGO;
-            StartPos = transform.position;
-            Vector3 Dir = (transform.position - PlanetGO.transform.position).normalized;
+            selectedPlanet = true;
+            selectedAnimTimer = 0;
+            selectedPlanetGO = PlanetGO;
+            startPos = transform.position;
+            Vector3 dir = (transform.position - PlanetGO.transform.position).normalized;
 
-            SelectedPlanetEndPos = PlanetGO.transform.position + (Dir * PlanetSelectDistance);
+            selectedPlanetEndPos = PlanetGO.transform.position + (dir * planetSelectDistance);
             foreach (GameObject GO in GameObject.FindGameObjectsWithTag("CelestialBody"))
-            { 
+            {
                 if (GO.GetComponent<PlanetRevolver>() != null)
                 {
                     GO.GetComponent<PlanetRevolver>().startRevolving = false;
                 }
             }
         }
-
-
-      
     }
 
     private bool IsPointerOverUIObject()

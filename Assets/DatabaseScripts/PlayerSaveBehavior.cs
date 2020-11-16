@@ -1,37 +1,32 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerSaveBehavior : MonoBehaviour
 {
-    //[SerializeField]
-    //TMP_InputField NameText, HealthText;
 
     [SerializeField]
-    Button SavePlayer, LoadPlayer;
+    private PlayerSaveSystem pSystem;
 
-    [SerializeField]
-    PlayerSaveSystem pSystem;
+    private PlayerData pData;
 
-    PlayerData pData;
-    //[SerializeField]
-    //TextMeshProUGUI NameTextLoad, HealthTextLoad;
-    // Start is called before the first frame update
     void Start()
     {
-        SavePlayer.onClick.AddListener(SavePlayerData);
-        LoadPlayer.onClick.AddListener(LoadPlayerDataCo);
+        SetupFirebaseDatabase();
     }
 
-    public void SavePlayerData()
+    public void SavePlayerData(PlayerData pData)
+    {
+        pSystem.SavePlayer(pData);
+    }
+
+    void SetupFirebaseDatabase()
     {
         StartCoroutine(LoadPlayerData());
-        PlayerData pData = new PlayerData();
+
         if (pData.planets == null)
         {
+            pData = new PlayerData();
             pData.planets = new List<PlanetData>();
             PlanetData planetData = new PlanetData();
             planetData.planetInfo.planetName = "Earth";
@@ -42,17 +37,22 @@ public class PlayerSaveBehavior : MonoBehaviour
             currPlanetHexagon.megaStructures.Add(megastructure);
             planetData.planetHexagons.Add(currPlanetHexagon);
             pData.planets.Add(planetData);
+            SavePlayerData(pData);
         }
-        pSystem.SavePlayer(pData);
     }
     void LoadPlayerDataCo()
     {
         StartCoroutine(LoadPlayerData());
     }
+    public PlayerData GetPlayerData()
+    {
+        return pData;
+    }
+
     IEnumerator LoadPlayerData()
     {
         var pDataTask = pSystem.LoadPlayer();
         yield return new WaitUntil(() => pDataTask.IsCompleted);
-        var pData = pDataTask.Result;
+        pData = pDataTask.Result;
     }
 }

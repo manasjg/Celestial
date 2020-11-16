@@ -4,8 +4,7 @@ using UnityEngine;
 public class ShowPanelButton : MonoBehaviour
 {
     [SerializeField]
-    GameObject PanelToLoad,MainMenuPanel;
-    // Start is called before the first frame update
+    private GameObject panelToLoad,mainMenuPanel;
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(SetPanel);
@@ -13,7 +12,7 @@ public class ShowPanelButton : MonoBehaviour
 
    void SetPanel()
     {
-        PanelToLoad.SetActive(true);
-        MainMenuPanel.SetActive(false);
+        panelToLoad.SetActive(true);
+        mainMenuPanel.SetActive(false);
     }
 }
