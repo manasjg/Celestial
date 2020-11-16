@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 public class LoginUIFlow : MonoBehaviour
 {
     [SerializeField]
-    Button registerButton/*,loginButton*/;
+    private Button registerButton/*,loginButton*/;
 
     //[SerializeField]
     //TMP_InputField emailField,passField1,passField2;
-    FirebaseAuth _auth;
+    private FirebaseAuth _auth;
     [SerializeField]
-    TextMeshProUGUI errorMsg;
+    private TextMeshProUGUI errorMsg;
 
 
     //[SerializeField]
@@ -24,8 +24,11 @@ public class LoginUIFlow : MonoBehaviour
     //[SerializeField]
     //TextMeshProUGUI errorMsgLogin;
 
-    Coroutine _registrationCoroutine=null;
-    Coroutine _loginCoroutine = null;
+    [SerializeField]
+    private TextMeshProUGUI loadingText;
+
+    private Coroutine _registrationCoroutine =null;
+    private Coroutine _loginCoroutine = null;
     private void Start()
     {
         registerButton.onClick.AddListener(RegisterPlayer);
@@ -36,9 +39,29 @@ public class LoginUIFlow : MonoBehaviour
         _auth = FirebaseAuth.DefaultInstance;
         if (_auth.CurrentUser != null)
         {
-            registerButton.interactable = false;
-           
-            SceneManager.LoadScene(1);
+            registerButton.gameObject.SetActive(false);
+            LoadGame();
+        }
+        else
+        {
+            registerButton.gameObject.SetActive(true);
+        }
+    }
+
+    void LoadGame()
+    {
+        StartCoroutine(LoadGameAsynchronously());
+    }
+
+    private IEnumerator LoadGameAsynchronously()
+    {
+        AsyncOperation loadGameOperation = SceneManager.LoadSceneAsync(1);
+        while (!loadGameOperation.isDone)
+        {
+            float progress = Mathf.Clamp01(loadGameOperation.progress / 0.9f) * 100f;
+            int progressRounded = (int)progress;
+            loadingText.text = "Loading..." + progressRounded.ToString();
+            yield return null;
         }
     }
 
@@ -120,21 +143,21 @@ public class LoginUIFlow : MonoBehaviour
     {
       
         var RegisterTask = _auth.SignInWithCredentialAsync(cred);
-        registerButton.interactable = false;
+        registerButton.gameObject.SetActive(false);
         yield return new WaitUntil(()=>RegisterTask.IsCompleted);
 
         if (RegisterTask.Exception != null)
         {
             Debug.Log("Registration failed with exception : " + RegisterTask.Exception);
-            
+            registerButton.gameObject.SetActive(true);
         }
         else
         {
-            SceneManager.LoadScene(1);
+            LoadGame();
             Debug.Log("Registration completed : " + RegisterTask.Exception);
         }
         _registrationCoroutine = null;
-        registerButton.interactable = true;
+
     }
 
     //private IEnumerator LoginUser(Firebase.Auth.Credential cred)
