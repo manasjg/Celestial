@@ -10,9 +10,22 @@ public class PlayerSaveBehavior : MonoBehaviour
 
     private PlayerData pData;
 
+    private static PlayerSaveBehavior instance;
+    public static PlayerSaveBehavior Instance { get { return instance; } }
+
     void Start()
     {
-        SetupFirebaseDatabase();
+       StartCoroutine( SetupFirebaseDatabase());
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+       
     }
 
     public void SavePlayerData(PlayerData pData)
@@ -20,9 +33,9 @@ public class PlayerSaveBehavior : MonoBehaviour
         pSystem.SavePlayer(pData);
     }
 
-    void SetupFirebaseDatabase()
+    IEnumerator SetupFirebaseDatabase()
     {
-        StartCoroutine(LoadPlayerData());
+       yield return  StartCoroutine(LoadPlayerData());
 
         if (pData.planets == null)
         {
@@ -35,6 +48,7 @@ public class PlayerSaveBehavior : MonoBehaviour
             currPlanetHexagon.megaStructures = new List<MegastructureData>();
             MegastructureData megastructure = new MegastructureData();
             currPlanetHexagon.megaStructures.Add(megastructure);
+            currPlanetHexagon.hexID = -1;
             planetData.planetHexagons.Add(currPlanetHexagon);
             pData.planets.Add(planetData);
             SavePlayerData(pData);

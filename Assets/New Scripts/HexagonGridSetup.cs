@@ -69,7 +69,7 @@ public class HexagonGridSetup : MonoBehaviour
         return FinalTilePos;
     }
 
-    public void RemoveTile(Vector3 Tile)
+    public int RemoveTile(Vector3 Tile)
     {
         ResetTiles();
         for (int i = 0; i < HexagonTiles.Count; i++)
@@ -77,9 +77,11 @@ public class HexagonGridSetup : MonoBehaviour
             if (HexagonTiles[i].transform.position == Tile)
             {
                 HexagonTiles.RemoveAt(i);
-                break;
+                return HexagonTiles[i].GetComponent<HexagonGridTile>().TileID;
+               
             }
         }
+        return -1;
     }
 
     public void ResetTiles()
