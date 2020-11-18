@@ -6,8 +6,7 @@ public struct MegastructureData
     public string name;
     public int upgradeLevel;
     public int researchLevel;
-    public int gridX;
-    public int gridY;
+    public int gridHexID;
     public float durability;
     public float resourceGeneration;
     public float capacity;

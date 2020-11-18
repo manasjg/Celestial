@@ -28,9 +28,10 @@ public class PlayerSaveBehavior : MonoBehaviour
        
     }
 
-    public void SavePlayerData(PlayerData pData)
+    public void SavePlayerData(PlayerData pDataNew)
     {
-        pSystem.SavePlayer(pData);
+        pSystem.SavePlayer(pDataNew);
+        pData = pDataNew;
     }
 
     IEnumerator SetupFirebaseDatabase()
@@ -47,6 +48,7 @@ public class PlayerSaveBehavior : MonoBehaviour
             PlanetHexagonData currPlanetHexagon = new PlanetHexagonData();
             currPlanetHexagon.megaStructures = new List<MegastructureData>();
             MegastructureData megastructure = new MegastructureData();
+            megastructure.gridHexID = -1;
             currPlanetHexagon.megaStructures.Add(megastructure);
             currPlanetHexagon.hexID = -1;
             planetData.planetHexagons.Add(currPlanetHexagon);

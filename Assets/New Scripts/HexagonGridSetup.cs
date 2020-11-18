@@ -17,8 +17,6 @@ public class HexagonGridSetup : MonoBehaviour
 
     }
 
-
-
     public Vector3 HighlightGridTile(Vector3 pos)
     {
         float Dist = 2000;
@@ -76,8 +74,10 @@ public class HexagonGridSetup : MonoBehaviour
         {
             if (HexagonTiles[i].transform.position == Tile)
             {
+                int tileID = HexagonTiles[i].GetComponent<HexagonGridTile>().TileID;
                 HexagonTiles.RemoveAt(i);
-                return HexagonTiles[i].GetComponent<HexagonGridTile>().TileID;
+                Debug.Log(tileID);
+                return tileID;
                
             }
         }

@@ -103,7 +103,8 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                     {
                         if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[0]))
                         {
-                            HGSetup.RemoveTile(MegaStructure.transform.position);
+                            int hexID = HGSetup.RemoveTile(MegaStructure.transform.position);
+                            MegaStructureSetup(GO, hexID);
                         }
                         else
                         {
@@ -118,8 +119,9 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         {
                             if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[i]))
                             {
-                                HGSetup.RemoveTile(MegaStructure.transform.position);
+                                int gridHexID = HGSetup.RemoveTile(MegaStructure.transform.position);
                                 canBuild = true;
+                                MegaStructureSetup(GO, gridHexID);
                             }
                         }
                         if (!canBuild)
@@ -138,6 +140,58 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             SRect.SendMessage("OnEndDrag", eventData);
         }
         _isScrolling = false;
+    }
+
+    private void MegaStructureSetup(GameObject megaStructureGO, int gridHexID)
+    {
+        int hexID = PlayerPrefs.GetInt("SelectedHexagonID", -1);
+        megaStructureGO.AddComponent<MegaStructureModel>();
+        megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.gridHexID = gridHexID;
+        megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.name = MegaStructure.name;
+        megaStructureGO.AddComponent<MegaStructureController>();
+        PlayerData pData = PlayerSaveBehavior.Instance.GetPlayerData();
+        AddMegaStructureToPlanetData(pData, hexID,gridHexID);
+    }
+
+    private void AddMegaStructureToPlanetData(PlayerData pData, int hexID,int gridHexID)
+    {
+        for (int i = 0; i < pData.planets.Count; i++)
+        {
+            if (pData.planets[i].planetInfo.planetName == PlayerPrefs.GetString("SelectedPlanetName", "0"))
+            {
+                int currHexID = -1;
+                for (int j = 0; j < pData.planets[i].planetHexagons.Count; j++)
+                {
+                    if (pData.planets[i].planetHexagons[j].hexID == hexID)
+                    {
+                        currHexID = j;
+                        break;
+                    }
+                }
+                if (currHexID != -1)
+                {
+                    if (pData.planets[i].planetHexagons[currHexID].megaStructures[0].gridHexID == -1)
+                    {
+                        MegastructureData structureDataTemp = pData.planets[i].planetHexagons[currHexID].megaStructures[0];
+                        structureDataTemp.gridHexID = gridHexID;
+                        structureDataTemp.name = MegaStructure.name;
+                        pData.planets[i].planetHexagons[currHexID].megaStructures[0] = structureDataTemp;
+                        PlayerData pDataTemp = pData;
+                        PlayerSaveBehavior.Instance.SavePlayerData(pDataTemp);
+                    }
+                    else
+                    {
+                        MegastructureData structureDataTemp = new MegastructureData();
+                        structureDataTemp.gridHexID = gridHexID;
+                        structureDataTemp.name = MegaStructure.name;
+                        pData.planets[i].planetHexagons[currHexID].megaStructures.Add(structureDataTemp);
+                        PlayerData pDataTemp = pData;
+                        PlayerSaveBehavior.Instance.SavePlayerData(pDataTemp);
+                    }
+                }
+            }
+        }
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
