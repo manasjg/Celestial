@@ -189,6 +189,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         PlayerSaveBehavior.Instance.SavePlayerData(pDataTemp);
                     }
                 }
+                break;
             }
         }
 

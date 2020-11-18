@@ -14,7 +14,7 @@ public class HexagonGridSetup : MonoBehaviour
             HexagonTiles.Add(GO);
             GO.SetActive(false);
         }
-
+        GetComponent<SetupMegaStructuresFromFirebase>().SetupMegaStructures();
     }
 
     public Vector3 HighlightGridTile(Vector3 pos)
@@ -76,14 +76,23 @@ public class HexagonGridSetup : MonoBehaviour
             {
                 int tileID = HexagonTiles[i].GetComponent<HexagonGridTile>().TileID;
                 HexagonTiles.RemoveAt(i);
-                Debug.Log(tileID);
                 return tileID;
                
             }
         }
         return -1;
     }
-
+    public Vector3 GetPositionByID(int gridHexID)
+    {
+        for (int i = 0; i < HexagonTiles.Count; i++)
+        {
+            if (HexagonTiles[i].GetComponent<HexagonGridTile>().TileID == gridHexID)
+            {
+                return HexagonTiles[i].transform.position;
+            }
+        }
+        return Vector3.zero;
+    }
     public void ResetTiles()
     {
         for (int i = 0; i < HexagonTiles.Count; i++)
