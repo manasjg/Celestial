@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 4be77d4dab1197f4abeb0c852a819c0e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: _piller
+    100002: Base
+    100004: Booster
+    100006: Booster_wing
+    100008: Booster_wing1
+    100010: Cylinder.004
+    100012: Signals
+    100014: //RootNode
+    100016: Viwer
+    100018: viwer_base
+    400000: _piller
+    400002: Base
+    400004: Booster
+    400006: Booster_wing
+    400008: Booster_wing1
+    400010: Cylinder.004
+    400012: Signals
+    400014: //RootNode
+    400016: Viwer
+    400018: viwer_base
+    2100000: phong6
+    2100002: phong7
+    2100004: phong8
+    2100006: phong9
+    2100008: phong10
+    2100010: phong11
+    2100012: phong12
+    2100014: phong13
+    2100016: phong14
+    2300000: _piller
+    2300002: Base
+    2300004: Booster
+    2300006: Booster_wing
+    2300008: Booster_wing1
+    2300010: Cylinder.004
+    2300012: Signals
+    2300014: Viwer
+    2300016: viwer_base
+    3300000: _piller
+    3300002: Base
+    3300004: Booster
+    3300006: Booster_wing
+    3300008: Booster_wing1
+    3300010: Cylinder.004
+    3300012: Signals
+    3300014: Viwer
+    3300016: viwer_base
+    4300000: Signals
+    4300002: viwer_base
+    4300004: Viwer
+    4300006: Cylinder.004
+    4300008: _piller
+    4300010: Booster_wing1
+    4300012: Booster_wing
+    4300014: Booster
+    4300016: Base
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

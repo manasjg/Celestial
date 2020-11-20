@@ -12,7 +12,7 @@ public class MegaStructureButton : MonoBehaviour
     float DownYPos;
     bool MovePanel = false;
     RectTransform RTransform;
-    public GameObject ObjectiveButton;
+    public GameObject GameInfoPanel;
    
     void Start()
     {
@@ -51,11 +51,11 @@ public class MegaStructureButton : MonoBehaviour
         MoveToggle = !MoveToggle;
         if (MoveToggle)
         {
-            ObjectiveButton.SetActive(false);
+            GameInfoPanel.SetActive(false);
         }
         else
         {
-            ObjectiveButton.SetActive(true);
+            GameInfoPanel.SetActive(true);
         }
         MovePanel = true;
         MoveTimer = 0;
