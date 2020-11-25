@@ -11,10 +11,4 @@ public class PlanetInfoSetter : MonoBehaviour
         Planets[SelectedPlanetID].SetActive(true);
         PlayerPrefs.SetString("SelectedPlanetName", Planets[SelectedPlanetID].name);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

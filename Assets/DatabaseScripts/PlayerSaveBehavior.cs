@@ -53,6 +53,26 @@ public class PlayerSaveBehavior : MonoBehaviour
             currPlanetHexagon.hexID = -1;
             planetData.planetHexagons.Add(currPlanetHexagon);
             pData.planets.Add(planetData);
+            PlayerSatelites planetSatelites = new PlayerSatelites();
+            planetSatelites.remoteControlSatelites = new List<SateliteData>();
+            planetSatelites.spaceships = new List<SateliteData>();
+            planetSatelites.transportSatelites = new List<SateliteData>();
+            SateliteData remoteControlSatelite = new SateliteData();
+            remoteControlSatelite.name = "Remote Control Satelite";
+            remoteControlSatelite.originPlanet = "Earth";
+            remoteControlSatelite.destinationPlanet = "Earth";
+            planetSatelites.remoteControlSatelites.Add(remoteControlSatelite);
+            SateliteData transportSatelite = new SateliteData();
+            transportSatelite.name = "Transport Satelite";
+            transportSatelite.originPlanet = "Earth";
+            transportSatelite.destinationPlanet = "Earth";
+            planetSatelites.transportSatelites.Add(transportSatelite);
+            SateliteData spaceship = new SateliteData();
+            spaceship.name = "Spaceship";
+            spaceship.originPlanet = "Earth";
+            spaceship.destinationPlanet = "Earth";
+            planetSatelites.spaceships.Add(spaceship);
+            pData.satelites = planetSatelites;
             SavePlayerData(pData);
         }
     }

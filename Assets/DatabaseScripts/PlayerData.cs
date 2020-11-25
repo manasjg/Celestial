@@ -13,4 +13,5 @@ public struct PlayerData
     public int sateliteBuildNumber;
     public int sateliteBuildTime;
     public List<PlanetData> planets;
+    public PlayerSatelites satelites;
 }
