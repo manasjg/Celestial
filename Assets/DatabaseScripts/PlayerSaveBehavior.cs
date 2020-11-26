@@ -62,10 +62,13 @@ public class PlayerSaveBehavior : MonoBehaviour
             remoteControlSatelite.originPlanet = "Earth";
             remoteControlSatelite.destinationPlanet = "Earth";
             planetSatelites.remoteControlSatelites.Add(remoteControlSatelite);
+            planetSatelites.remoteControlSatelites.Add(remoteControlSatelite);
             SateliteData transportSatelite = new SateliteData();
             transportSatelite.name = "Transport Satelite";
             transportSatelite.originPlanet = "Earth";
             transportSatelite.destinationPlanet = "Earth";
+            planetSatelites.transportSatelites.Add(transportSatelite);
+            planetSatelites.transportSatelites.Add(transportSatelite);
             planetSatelites.transportSatelites.Add(transportSatelite);
             SateliteData spaceship = new SateliteData();
             spaceship.name = "Spaceship";
