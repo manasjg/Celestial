@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class PlanetScrollListToggle : MonoBehaviour
 {
     [SerializeField]
-    private Button planetScrollListToggleButton,closeButton;
+    private Button planetScrollListToggleButton, closeButton;
 
     [SerializeField]
     private GameObject planetScrollList;
     bool listFlag = true;
-  
+
     private void Start()
     {
         planetScrollListToggleButton.onClick.AddListener(SetListToggle);

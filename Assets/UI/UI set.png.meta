@@ -86,22 +86,23 @@ TextureImporter:
     21300162: UI set_81
     21300164: UI set_82
     21300166: UI set_83
-    21300168: UI set_84
-    21300170: UI set_85
-    21300172: UI set_86
-    21300174: UI set_87
-    21300176: UI set_88
-    21300178: UI set_89
-    21300180: UI set_90
-    21300182: UI set_91
-    21300184: UI set_92
-    21300186: UI set_93
-    21300188: UI set_94
-    21300190: UI set_95
-    21300192: UI set_96
+    21300168: Venus
+    21300170: Triton
+    21300172: Europa
+    21300174: Moon
+    21300176: Mercury
+    21300178: Mars
+    21300180: Io
+    21300182: Ganymede
+    21300184: Pluto
+    21300186: Enceladus
+    21300188: Earth
+    21300190: Charon
+    21300192: Callisto
     21300194: UI set_97
+    21300196: SateliteConnector
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -853,346 +854,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_33
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 2997
-        width: 32
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c28cd27b82c3e54ead0a8f6c54b5a9d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_34
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 3001
-        width: 28
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b66d10e6f87f30e4ab92a9657adcfb02
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_35
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 3001
-        width: 27
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a3e9e8dc67b17446a626b690ee1e3e4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_36
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 3001
-        width: 30
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86a12a5433cdfde4b93355a114f4b80b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_37
-      rect:
-        serializedVersion: 2
-        x: 181
-        y: 3001
-        width: 30
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8902c20b40269374e8e3187fa6b51dfc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_38
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 3001
-        width: 29
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d923dcd50dc5e04998c66aa5d94e6d2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_39
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 3001
-        width: 31
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae9d7d94012d2174889df2fa0a9bee8c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_40
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 3001
-        width: 30
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa0b2d79a5835ff43ab7647998a5ef3d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_41
-      rect:
-        serializedVersion: 2
-        x: 330
-        y: 3001
-        width: 32
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9cfc28e1cc9b7b4e87dbe64db5dd121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_42
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 3001
-        width: 34
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57acf452ebb1fd0438a4b99b194da33b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_43
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 3001
-        width: 32
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54dce55ccb0bf5344be994f2aa8681d0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_44
-      rect:
-        serializedVersion: 2
-        x: 451
-        y: 3001
-        width: 33
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8b7d8967072481449c24e27fc976b39
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_45
-      rect:
-        serializedVersion: 2
-        x: 492
-        y: 3001
-        width: 33
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 398876e88794cc7498a80c88cf11931d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_46
-      rect:
-        serializedVersion: 2
-        x: 535
-        y: 3001
-        width: 35
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dff99fad835924644915375c7ebe0e10
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_47
-      rect:
-        serializedVersion: 2
-        x: 579
-        y: 3001
-        width: 36
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae76ba926e912c04faae7a1b65a0fd1e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_48
-      rect:
-        serializedVersion: 2
-        x: 622
-        y: 3001
-        width: 37
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35e8d0528eb0e8b4891b86b2d9fcb69d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI set_49
-      rect:
-        serializedVersion: 2
-        x: 669
-        y: 3001
-        width: 37
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6fa9781a07e48d74886bd1e94ded29fa
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: UI set_50
       rect:
         serializedVersion: 2
@@ -1873,11 +1534,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_84
+      name: Venus
       rect:
         serializedVersion: 2
-        x: 72
-        y: 81
+        x: 73
+        y: 79
         width: 107
         height: 104
       alignment: 0
@@ -1893,7 +1554,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_85
+      name: Triton
       rect:
         serializedVersion: 2
         x: 215
@@ -1913,11 +1574,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_86
+      name: Europa
       rect:
         serializedVersion: 2
         x: 356
-        y: 81
+        y: 82
         width: 106
         height: 104
       alignment: 0
@@ -1933,10 +1594,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_87
+      name: Moon
       rect:
         serializedVersion: 2
-        x: 503
+        x: 505
         y: 81
         width: 104
         height: 104
@@ -1953,11 +1614,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_88
+      name: Mercury
       rect:
         serializedVersion: 2
         x: 654
-        y: 81
+        y: 83
         width: 106
         height: 104
       alignment: 0
@@ -1973,7 +1634,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_89
+      name: Mars
       rect:
         serializedVersion: 2
         x: 814
@@ -1993,10 +1654,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_90
+      name: Io
       rect:
         serializedVersion: 2
-        x: 970
+        x: 969
         y: 81
         width: 106
         height: 104
@@ -2013,10 +1674,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_91
+      name: Ganymede
       rect:
         serializedVersion: 2
-        x: 1126
+        x: 1130
         y: 81
         width: 106
         height: 104
@@ -2033,11 +1694,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_92
+      name: Pluto
       rect:
         serializedVersion: 2
-        x: 1299
-        y: 81
+        x: 1298
+        y: 80
         width: 104
         height: 104
       alignment: 0
@@ -2053,11 +1714,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_93
+      name: Enceladus
       rect:
         serializedVersion: 2
         x: 1463
-        y: 81
+        y: 82
         width: 104
         height: 102
       alignment: 0
@@ -2073,11 +1734,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_94
+      name: Earth
       rect:
         serializedVersion: 2
-        x: 1636
-        y: 81
+        x: 1640
+        y: 83
         width: 106
         height: 104
       alignment: 0
@@ -2093,7 +1754,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_95
+      name: Charon
       rect:
         serializedVersion: 2
         x: 1807
@@ -2113,7 +1774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI set_96
+      name: Callisto
       rect:
         serializedVersion: 2
         x: 1978
@@ -2148,6 +1809,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 31e8203f469f5044199fd675dfc1f127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SateliteConnector
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2995
+        width: 702
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11cd22ba650917459a453bf396afcbd
       vertices: []
       indices: 
       edges: []

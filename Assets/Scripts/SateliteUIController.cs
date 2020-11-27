@@ -1,6 +1,7 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class SateliteUIController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SateliteUIController : MonoBehaviour
 
     public GameObject sateliteMenuPanel;
     public GameObject sateliteInfoPanel;
+    public GameObject sateliteModifyPanel;
 
     public RectTransform sateliteInfoListRect;
     public Button sateliteInfoButton;
@@ -69,42 +71,46 @@ public class SateliteUIController : MonoBehaviour
         switch (index)
         {
             case 0:
-                if (pData.satelites.remoteControlSatelites.Count > 1)
-                {
-                    for (int i = 1; i < pData.satelites.remoteControlSatelites.Count; i++)
-                    {
-                        Button createdButton = Instantiate(sateliteInfoButton, sateliteInfoButton.transform.parent);
-                        createdButtons.Add(createdButton);
-                    }
-                }
+                CreateButtonsFromList(pData.satelites.remoteControlSatelites);
                 break;
             case 1:
-                if (pData.satelites.transportSatelites.Count > 1)
-                {
-                    for (int i = 1; i < pData.satelites.transportSatelites.Count; i++)
-                    {
-                        Button createdButton = Instantiate(sateliteInfoButton, sateliteInfoButton.transform.parent);
-                        createdButtons.Add(createdButton);
-                    }
-                }
+                CreateButtonsFromList(pData.satelites.transportSatelites);
                 break;
             case 2:
-                if (pData.satelites.spaceships.Count > 1)
-                {
-                    for (int i = 1; i < pData.satelites.spaceships.Count; i++)
-                    {
-                        Button createdButton = Instantiate(sateliteInfoButton, sateliteInfoButton.transform.parent);
-                        createdButtons.Add(createdButton);
-                    }
-                }
+                CreateButtonsFromList(pData.satelites.spaceships);
                 break;
         }
+    }
+
+    void CreateButtonsFromList(List<SateliteData> satelitesList)
+    {
+        if (satelitesList.Count > 1)
+        {
+            for (int i = 1; i < satelitesList.Count; i++)
+            {
+                Button createdButton = Instantiate(sateliteInfoButton, sateliteInfoButton.transform.parent);
+                createdButton.GetComponent<SateliteInfoSetter>().SetupInfoButton(satelitesList[i]);
+                int index = i;
+                createdButton.onClick.AddListener(delegate { setSateliteModificationPanel(satelitesList[index]); });
+                createdButtons.Add(createdButton);
+            }
+        }
+        sateliteInfoButton.onClick.AddListener(delegate { setSateliteModificationPanel(satelitesList[0]); });
+        sateliteInfoButton.GetComponent<SateliteInfoSetter>().SetupInfoButton(satelitesList[0]);       
+    }
+
+    private void setSateliteModificationPanel(SateliteData sateliteData)
+    {
+        sateliteInfoPanel.SetActive(false);
+        sateliteModifyPanel.SetActive(true);
+        sateliteModifyPanel.GetComponent<SateliteModificationSetter>().SetModificationPanel(sateliteData);
     }
 
     void DisableSatelitePanels()
     {
         sateliteInfoPanel.SetActive(false);
         sateliteMenuPanel.SetActive(false);
+        sateliteModifyPanel.SetActive(false);
         sateliteMenuButton.gameObject.SetActive(true);
     }
 
