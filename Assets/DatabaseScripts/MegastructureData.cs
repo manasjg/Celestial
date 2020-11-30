@@ -3,6 +3,7 @@
 [Serializable]
 public struct MegastructureData
 {
+    public MegaStructureType structureType;
     public string name;
     public int upgradeLevel;
     public int researchLevel;

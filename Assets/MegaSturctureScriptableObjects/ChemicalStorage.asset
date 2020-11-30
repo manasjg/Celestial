@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a6a8123d31f994c8481a8ee1e07d64, type: 3}
   m_Name: ChemicalStorage
   m_EditorClassIdentifier: 
-  Description: 
+  StructureType: 2
+  Description: They are a prerequisite structures to build Drillers and/or Air extractors.
+    They store chemicals produced by these structures.
   TechnologyRequired: 100
   EnergyRequired: 200
   FoodCost: 50

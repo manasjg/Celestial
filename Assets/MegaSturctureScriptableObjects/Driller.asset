@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a6a8123d31f994c8481a8ee1e07d64, type: 3}
   m_Name: Driller
   m_EditorClassIdentifier: 
-  Description: 
+  StructureType: 4
+  Description: Used to drill the surface and extract minerals, alloys, and other chemicals.
   TechnologyRequired: 100
   EnergyRequired: 200
   FoodCost: 50

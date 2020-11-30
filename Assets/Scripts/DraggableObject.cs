@@ -148,12 +148,13 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         megaStructureGO.AddComponent<MegaStructureModel>();
         megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.gridHexID = gridHexID;
         megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.name = MegaStructure.name;
+        megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.structureType = StructureData.StructureType;
         megaStructureGO.AddComponent<MegaStructureController>();
         PlayerData pData = PlayerSaveBehavior.Instance.GetPlayerData();
-        AddMegaStructureToPlanetData(pData, hexID,gridHexID);
+        AddMegaStructureToPlanetData(pData, hexID,gridHexID,StructureData.StructureType);
     }
 
-    private void AddMegaStructureToPlanetData(PlayerData pData, int hexID,int gridHexID)
+    private void AddMegaStructureToPlanetData(PlayerData pData, int hexID,int gridHexID,MegaStructureType structureType)
     {
         for (int i = 0; i < pData.planets.Count; i++)
         {
@@ -175,6 +176,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         MegastructureData structureDataTemp = pData.planets[i].planetHexagons[currHexID].megaStructures[0];
                         structureDataTemp.gridHexID = gridHexID;
                         structureDataTemp.name = MegaStructure.name;
+                        structureDataTemp.structureType = structureType;
                         pData.planets[i].planetHexagons[currHexID].megaStructures[0] = structureDataTemp;
                         PlayerData pDataTemp = pData;
                         PlayerSaveBehavior.Instance.SavePlayerData(pDataTemp);
@@ -184,6 +186,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         MegastructureData structureDataTemp = new MegastructureData();
                         structureDataTemp.gridHexID = gridHexID;
                         structureDataTemp.name = MegaStructure.name;
+                        structureDataTemp.structureType = structureType;
                         pData.planets[i].planetHexagons[currHexID].megaStructures.Add(structureDataTemp);
                         PlayerData pDataTemp = pData;
                         PlayerSaveBehavior.Instance.SavePlayerData(pDataTemp);

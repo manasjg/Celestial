@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a6a8123d31f994c8481a8ee1e07d64, type: 3}
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
-  Description: 
+  StructureType: 12
+  Description: 'Allows for the launching of satellites from celestial body. '
   TechnologyRequired: 100
   EnergyRequired: 200
   FoodCost: 50

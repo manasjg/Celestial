@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a6a8123d31f994c8481a8ee1e07d64, type: 3}
   m_Name: EnergyRepository
   m_EditorClassIdentifier: 
-  Description: 
+  StructureType: 5
+  Description: 'Needed to build any energy structures like hydro, solar, wind and
+    nuclear power plant. They store energy produced. '
   TechnologyRequired: 100
   EnergyRequired: 200
   FoodCost: 50

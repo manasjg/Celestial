@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class PlayerSaveBehavior : MonoBehaviour
 {
-
     [SerializeField]
     private PlayerSaveSystem pSystem;
 
@@ -25,7 +24,6 @@ public class PlayerSaveBehavior : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-       
     }
 
     public void SavePlayerData(PlayerData pDataNew)

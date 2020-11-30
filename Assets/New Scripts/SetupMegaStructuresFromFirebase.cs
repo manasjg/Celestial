@@ -1,5 +1,27 @@
 ﻿using UnityEngine;
 
+public enum MegaStructureType
+{
+    AirExtractor,
+    BusinessCenter,
+    ChemicalStorage,
+    CommandCentre,
+    Driller,
+    EnergyRepository,
+    GreenHouse,
+    HabitatHouse,
+    HydroPowerPlant,
+    FoodStorageRepository,
+    MedicalHouse,
+    NuclearPowerPlant,
+    RocketLauncher,
+    SolarPanel,
+    TechnoLab,
+    WindPlant
+}
+
+
+
 public class SetupMegaStructuresFromFirebase : MonoBehaviour
 {
     HexagonGridSetup gridSetup;

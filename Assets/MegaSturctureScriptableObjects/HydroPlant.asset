@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a6a8123d31f994c8481a8ee1e07d64, type: 3}
   m_Name: HydroPlant
   m_EditorClassIdentifier: 
-  Description: 
+  StructureType: 8
+  Description: These are usually underwater plants that are placed only in areas where
+    water can be found. They generate energy from water.
   TechnologyRequired: 100
   EnergyRequired: 200
   FoodCost: 50
