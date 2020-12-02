@@ -102,7 +102,6 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                     {
                         if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[0]))
                         {
-
                             if (StructureData.StructureType == MegaStructureType.CommandCentre)
                             {
                                 if (!MegaStructureManager.Instance.hasCommandCentre)
@@ -112,6 +111,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                                 }
                                 else
                                 {
+                                    PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
                                     HGSetup.ResetTiles();
                                     Destroy(GO);
                                 }
@@ -125,6 +125,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                                 }
                                 else
                                 {
+                                    PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
                                     HGSetup.ResetTiles();
                                     Destroy(GO);
                                 }
@@ -133,6 +134,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         }
                         else
                         {
+                            PlayerInfoDisplayManager.instance.ShowPlayerMessage("Cannot build here");
                             HGSetup.ResetTiles();
                             Destroy(GO);
                         }
@@ -160,6 +162,15 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         }
                         if (!canBuild)
                         {
+                           if(MegaStructureManager.Instance.hasCommandCentre)
+                            {
+                                PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
+                            }
+                            else
+                            {
+                                PlayerInfoDisplayManager.instance.ShowPlayerMessage("Cannot build here");
+                            }
+                            
                             HGSetup.ResetTiles();
                             Destroy(GO);
                         }
