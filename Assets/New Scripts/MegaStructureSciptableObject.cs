@@ -13,5 +13,5 @@ public class MegaStructureSciptableObject : ScriptableObject
     public int ChemicalCost = 10;
     public int CashCost =400;
     public HexagonGridTileType[] TileTypeRequired;
-  
+    public MegaStructureType[] BuildingsRequired;
 }

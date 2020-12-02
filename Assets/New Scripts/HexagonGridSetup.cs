@@ -14,7 +14,7 @@ public class HexagonGridSetup : MonoBehaviour
             HexagonTiles.Add(GO);
             GO.SetActive(false);
         }
-        GetComponent<SetupMegaStructuresFromFirebase>().SetupMegaStructures();
+        GetComponent<MegaStructureManager>().SetupMegaStructures();
     }
 
     public Vector3 HighlightGridTile(Vector3 pos)

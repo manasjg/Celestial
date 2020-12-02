@@ -95,16 +95,41 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
                     GameObject GO = GameObject.Instantiate(MegaStructure);
                     GO.transform.position = MegaStructure.transform.position;
-
                     MegaStructure.SetActive(false);
-
                     HexagonTile.SetActive(false);
+
                     if (StructureData.TileTypeRequired.Length == 1)
                     {
                         if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[0]))
                         {
-                            int hexID = HGSetup.RemoveTile(MegaStructure.transform.position);
-                            MegaStructureSetup(GO, hexID);
+
+                            if (StructureData.StructureType == MegaStructureType.CommandCentre)
+                            {
+                                if (!MegaStructureManager.Instance.hasCommandCentre)
+                                {
+                                    int hexID = HGSetup.RemoveTile(MegaStructure.transform.position);
+                                    MegaStructureSetup(GO, hexID);
+                                }
+                                else
+                                {
+                                    HGSetup.ResetTiles();
+                                    Destroy(GO);
+                                }
+                            }
+                            else
+                            {
+                                if (MegaStructureManager.Instance.hasCommandCentre)
+                                {
+                                    int hexID = HGSetup.RemoveTile(MegaStructure.transform.position);
+                                    MegaStructureSetup(GO, hexID);
+                                }
+                                else
+                                {
+                                    HGSetup.ResetTiles();
+                                    Destroy(GO);
+                                }
+                            }
+
                         }
                         else
                         {
@@ -117,7 +142,16 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         bool canBuild = false;
                         for (int i = 0; i < StructureData.TileTypeRequired.Length; i++)
                         {
-                            if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[i]))
+                            if (StructureData.StructureType == MegaStructureType.CommandCentre)
+                            {
+                                if (!MegaStructureManager.Instance.hasCommandCentre && HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[i]))
+                                {
+                                    int gridHexID = HGSetup.RemoveTile(MegaStructure.transform.position);
+                                    canBuild = true;
+                                    MegaStructureSetup(GO, gridHexID);
+                                }
+                            }
+                            else if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[i]) && MegaStructureManager.Instance.hasCommandCentre)
                             {
                                 int gridHexID = HGSetup.RemoveTile(MegaStructure.transform.position);
                                 canBuild = true;
@@ -145,16 +179,17 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private void MegaStructureSetup(GameObject megaStructureGO, int gridHexID)
     {
         int hexID = PlayerPrefs.GetInt("SelectedHexagonID", -1);
-        megaStructureGO.AddComponent<MegaStructureModel>();
-        megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.gridHexID = gridHexID;
-        megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.name = MegaStructure.name;
-        megaStructureGO.GetComponent<MegaStructureModel>().megaStructureData.structureType = StructureData.StructureType;
+        MegaStructureModel model = megaStructureGO.AddComponent<MegaStructureModel>();
+        model.megaStructureData.gridHexID = gridHexID;
+        model.megaStructureData.name = MegaStructure.name;
+        model.megaStructureData.structureType = StructureData.StructureType;
+        MegaStructureManager.Instance.AddStructureToList(model);
         megaStructureGO.AddComponent<MegaStructureController>();
         PlayerData pData = PlayerSaveBehavior.Instance.GetPlayerData();
-        AddMegaStructureToPlanetData(pData, hexID,gridHexID,StructureData.StructureType);
+        AddMegaStructureToPlanetData(pData, hexID, gridHexID, StructureData.StructureType);
     }
 
-    private void AddMegaStructureToPlanetData(PlayerData pData, int hexID,int gridHexID,MegaStructureType structureType)
+    private void AddMegaStructureToPlanetData(PlayerData pData, int hexID, int gridHexID, MegaStructureType structureType)
     {
         for (int i = 0; i < pData.planets.Count; i++)
         {
