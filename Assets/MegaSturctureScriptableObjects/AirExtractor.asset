@@ -20,4 +20,4 @@ MonoBehaviour:
   ChemicalCost: 300
   CashCost: 500
   TileTypeRequired: 000000000200000001000000
-  BuildingsRequired: 0300000002000000
+  BuildingsRequired: 0200000003000000

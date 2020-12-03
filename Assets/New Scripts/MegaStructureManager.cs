@@ -52,11 +52,9 @@ public class MegaStructureManager : MonoBehaviour
                 int hexID = PlayerPrefs.GetInt("SelectedHexagonID", -1);
                 for (int j = 0; j < pData.planets[i].planetHexagons.Count; j++)
                 {
-
                     if (pData.planets[i].planetHexagons[j].hexID == hexID)
                     {
                         currHexID = j;
-
                     }
                 }
                 if (currHexID != -1)
@@ -104,7 +102,6 @@ public class MegaStructureManager : MonoBehaviour
         {
             if (pData.planets[i].planetInfo.planetName == PlayerPrefs.GetString("SelectedPlanetName", "0"))
             {
-                int currHexID = -1;
                 int hexID = PlayerPrefs.GetInt("SelectedHexagonID", -1);
                 for (int j = 0; j < pData.planets[i].planetHexagons.Count; j++)
                 {
@@ -121,4 +118,15 @@ public class MegaStructureManager : MonoBehaviour
         return false;
     }
 
+    public bool CheckIfPlanetHasFollowingMegaStructures(MegaStructureType[] structureTypes) 
+    {
+        for(int i = 0; i < structureTypes.Length; i++)
+        {
+            if (!CheckIfPlanetHasMegaStructure(structureTypes[i]))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }

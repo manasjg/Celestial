@@ -118,14 +118,21 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                             }
                             else
                             {
-                                if (MegaStructureManager.Instance.hasCommandCentre)
+                                if (MegaStructureManager.Instance.hasCommandCentre && MegaStructureManager.Instance.CheckIfPlanetHasFollowingMegaStructures(StructureData.BuildingsRequired))
                                 {
                                     int hexID = HGSetup.RemoveTile(MegaStructure.transform.position);
                                     MegaStructureSetup(GO, hexID);
                                 }
                                 else
                                 {
-                                    PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
+                                    if (!MegaStructureManager.Instance.hasCommandCentre)
+                                    {
+                                        PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
+                                    }
+                                    else
+                                    {
+                                        PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a " + StructureData.BuildingsRequired[0].ToString() + " on the celestial body first");
+                                    }
                                     HGSetup.ResetTiles();
                                     Destroy(GO);
                                 }
@@ -153,7 +160,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                                     MegaStructureSetup(GO, gridHexID);
                                 }
                             }
-                            else if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[i]) && MegaStructureManager.Instance.hasCommandCentre)
+                            else if (HGSetup.CanBuildOverThisTile(StructureData.TileTypeRequired[i]) && MegaStructureManager.Instance.hasCommandCentre && MegaStructureManager.Instance.CheckIfPlanetHasFollowingMegaStructures(StructureData.BuildingsRequired))
                             {
                                 int gridHexID = HGSetup.RemoveTile(MegaStructure.transform.position);
                                 canBuild = true;
@@ -162,15 +169,19 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         }
                         if (!canBuild)
                         {
-                           if(!MegaStructureManager.Instance.hasCommandCentre)
+                            if (!MegaStructureManager.Instance.hasCommandCentre)
                             {
                                 PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
+                            }
+                            else if (!MegaStructureManager.Instance.CheckIfPlanetHasFollowingMegaStructures(StructureData.BuildingsRequired))
+                            {
+                                PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a " + StructureData.BuildingsRequired[0].ToString() + " on the celestial body first");
                             }
                             else
                             {
                                 PlayerInfoDisplayManager.instance.ShowPlayerMessage("Can not build this structure over this tile type");
                             }
-                            
+
                             HGSetup.ResetTiles();
                             Destroy(GO);
                         }
