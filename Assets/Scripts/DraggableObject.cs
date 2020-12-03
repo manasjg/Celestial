@@ -111,7 +111,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                                 }
                                 else
                                 {
-                                    PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
+                                    PlayerInfoDisplayManager.instance.ShowPlayerMessage("Celestial body already has a command centre");
                                     HGSetup.ResetTiles();
                                     Destroy(GO);
                                 }
@@ -162,13 +162,13 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                         }
                         if (!canBuild)
                         {
-                           if(MegaStructureManager.Instance.hasCommandCentre)
+                           if(!MegaStructureManager.Instance.hasCommandCentre)
                             {
                                 PlayerInfoDisplayManager.instance.ShowPlayerMessage("Please build a command centre on the celestial body first");
                             }
                             else
                             {
-                                PlayerInfoDisplayManager.instance.ShowPlayerMessage("Cannot build here");
+                                PlayerInfoDisplayManager.instance.ShowPlayerMessage("Can not build this structure over this tile type");
                             }
                             
                             HGSetup.ResetTiles();

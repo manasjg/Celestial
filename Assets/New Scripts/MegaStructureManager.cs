@@ -52,13 +52,7 @@ public class MegaStructureManager : MonoBehaviour
                 int hexID = PlayerPrefs.GetInt("SelectedHexagonID", -1);
                 for (int j = 0; j < pData.planets[i].planetHexagons.Count; j++)
                 {
-                    for (int k = 0; k < pData.planets[i].planetHexagons[j].megaStructures.Count; k++)
-                    {
-                        if (pData.planets[i].planetHexagons[j].megaStructures[k].structureType == MegaStructureType.CommandCentre)
-                        {
-                            hasCommandCentre = true;
-                        }
-                    }
+
                     if (pData.planets[i].planetHexagons[j].hexID == hexID)
                     {
                         currHexID = j;
@@ -91,6 +85,7 @@ public class MegaStructureManager : MonoBehaviour
                 break;
             }
         }
+        hasCommandCentre = CheckIfPlanetHasMegaStructure(MegaStructureType.CommandCentre);
     }
 
     public void AddStructureToList(MegaStructureModel megaStructureModel)
@@ -100,6 +95,30 @@ public class MegaStructureManager : MonoBehaviour
         {
             hasCommandCentre = true;
         }
+    }
+
+    public bool CheckIfPlanetHasMegaStructure(MegaStructureType structureType)
+    {
+        PlayerData pData = PlayerSaveBehavior.Instance.GetPlayerData();
+        for (int i = 0; i < pData.planets.Count; i++)
+        {
+            if (pData.planets[i].planetInfo.planetName == PlayerPrefs.GetString("SelectedPlanetName", "0"))
+            {
+                int currHexID = -1;
+                int hexID = PlayerPrefs.GetInt("SelectedHexagonID", -1);
+                for (int j = 0; j < pData.planets[i].planetHexagons.Count; j++)
+                {
+                    for (int k = 0; k < pData.planets[i].planetHexagons[j].megaStructures.Count; k++)
+                    {
+                        if (pData.planets[i].planetHexagons[j].megaStructures[k].structureType == structureType)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }
