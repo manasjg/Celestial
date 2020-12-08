@@ -48,7 +48,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("Hit");
+               
                 // Transform objectHit = hit.transform;
                 if (hit.transform.tag == "Land")
                 {
@@ -206,7 +206,8 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         model.megaStructureData.name = MegaStructure.name;
         model.megaStructureData.structureType = StructureData.StructureType;
         MegaStructureManager.Instance.AddStructureToList(model);
-        megaStructureGO.AddComponent<MegaStructureController>();
+        MegaStructureController controller = megaStructureGO.AddComponent<MegaStructureController>();
+        megaStructureGO.GetComponent<BoxCollider>().enabled = true;
         PlayerData pData = PlayerSaveBehavior.Instance.GetPlayerData();
         AddMegaStructureToPlanetData(pData, hexID, gridHexID, StructureData.StructureType);
     }
@@ -252,7 +253,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                 break;
             }
         }
-
+        UserData.Instance.ReduceUserData(StructureData);
     }
 
     public void OnPointerClick(PointerEventData eventData)

@@ -11,17 +11,7 @@ public class MegaStructurePanelDisplay : MonoBehaviour
     public Text FoodCost ;
     public Text ChemicalCost ;
     public Text CashCost ;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     public void DisplaySturctureInfo(MegaStructureSciptableObject StructureInfo)
     {
         StructureDescription.text = StructureInfo.Description;

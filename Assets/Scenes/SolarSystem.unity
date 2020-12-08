@@ -293,7 +293,6 @@ GameObject:
   - component: {fileID: 51854694}
   - component: {fileID: 51854693}
   - component: {fileID: 51854697}
-  - component: {fileID: 51854698}
   - component: {fileID: 51854699}
   - component: {fileID: 51854700}
   m_Layer: 5
@@ -422,28 +421,6 @@ MonoBehaviour:
   CosmicCashImage: {fileID: 21300008, guid: 52b156cff51e24e3d86bd36b9a060e58, type: 3}
   TechnologyImage: {fileID: 21300002, guid: 52b156cff51e24e3d86bd36b9a060e58, type: 3}
   CloseButton: {fileID: 1812759235}
---- !u!114 &51854698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51854692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855a23396bbf58d4cad2f7ba80b3acdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usercosmiccash: 0
-  userfood: 0
-  userchemical: 0
-  userenergy: 0
-  usertechnology: 0
-  CashText: {fileID: 643576820}
-  FoodText: {fileID: 1857147042}
-  ChemicalText: {fileID: 82021117}
-  EnergyText: {fileID: 1433406486}
-  TechText: {fileID: 443187325}
 --- !u!114 &51854699
 MonoBehaviour:
   m_ObjectHideFlags: 0

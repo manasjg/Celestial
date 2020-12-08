@@ -76,6 +76,7 @@ public class MegaStructureManager : MonoBehaviour
                                 model.megaStructureData.structureType = structureData.structureType;
                                 AddStructureToList(model);
                                 GO.AddComponent<MegaStructureController>();
+                                GO.GetComponent<BoxCollider>().enabled = true;
                             }
                         }
                     }
@@ -98,6 +99,7 @@ public class MegaStructureManager : MonoBehaviour
     public bool CheckIfPlanetHasMegaStructure(MegaStructureType structureType)
     {
         PlayerData pData = PlayerSaveBehavior.Instance.GetPlayerData();
+        Debug.Log("Setting");
         for (int i = 0; i < pData.planets.Count; i++)
         {
             if (pData.planets[i].planetInfo.planetName == PlayerPrefs.GetString("SelectedPlanetName", "0"))

@@ -28,6 +28,7 @@ public class PlayerSaveBehavior : MonoBehaviour
 
     public void SavePlayerData(PlayerData pDataNew)
     {
+        Debug.Log(pDataNew.cash);
         pSystem.SavePlayer(pDataNew);
         pData = pDataNew;
     }
@@ -74,6 +75,11 @@ public class PlayerSaveBehavior : MonoBehaviour
             spaceship.destinationPlanet = "Triton";
             planetSatelites.spaceships.Add(spaceship);
             pData.satelites = planetSatelites;
+            pData.cash = 50000;
+            pData.food = 50000;
+            pData.chemicals = 50000;
+            pData.energy = 50000;
+            pData.tech = 50000;
             SavePlayerData(pData);
         }
     }
