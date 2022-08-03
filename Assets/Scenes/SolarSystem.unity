@@ -4829,7 +4829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -218.49985, y: 38.152878}
+  m_AnchoredPosition: {x: -218.49985, y: 38.152836}
   m_SizeDelta: {x: 537, y: 91}
   m_Pivot: {x: -0.0000000037252903, y: 0.99999994}
 --- !u!114 &673046666
@@ -7427,9 +7427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa9c87368c65634eaa1a205bdb0c96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaunchPosGO: {fileID: 1545986755}
-  LandPosGO: {fileID: 641717273}
-  TravelTime: 10
+  LaunchPosGO: {fileID: 1129320455}
+  LandPosGO: {fileID: 828430900}
+  TravelTime: 40
 --- !u!4 &1187679082
 Transform:
   m_ObjectHideFlags: 0
@@ -11955,9 +11955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa9c87368c65634eaa1a205bdb0c96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaunchPosGO: {fileID: 1545986755}
-  LandPosGO: {fileID: 641717273}
-  TravelTime: 10
+  LaunchPosGO: {fileID: 1129320455}
+  LandPosGO: {fileID: 828430900}
+  TravelTime: 40
 --- !u!1 &1881633857
 GameObject:
   m_ObjectHideFlags: 0

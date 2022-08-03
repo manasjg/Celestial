@@ -12,6 +12,7 @@ public class MegaStructureSciptableObject : ScriptableObject
     public int FoodCost = 50;
     public int ChemicalCost = 10;
     public int CashCost =400;
+    public float ConstructionSpeed = 0.01f;
     public HexagonGridTileType[] TileTypeRequired;
     public MegaStructureType[] BuildingsRequired;
 }

@@ -54,8 +54,9 @@ public class HexagonGridSetup : MonoBehaviour
                 || (HexagonTiles[i].GetComponent<HexagonGridTile>().TileID == HighLightedTileLeft2)
                 || (HexagonTiles[i].GetComponent<HexagonGridTile>().TileID == HighLightedTileRight1)
                 || (HexagonTiles[i].GetComponent<HexagonGridTile>().TileID == HighLightedTileRight2))
-                && (Mathf.Abs(HexagonTiles[i].transform.position.x - transform.position.x) < 0.2f))
+                && (Mathf.Abs(HexagonTiles[i].transform.position.x - transform.position.x) < 5f))
             {
+                
                 HexagonTiles[i].SetActive(true);
             }
             else
@@ -96,7 +97,6 @@ public class HexagonGridSetup : MonoBehaviour
     public void ResetTiles()
     {
         for (int i = 0; i < HexagonTiles.Count; i++)
-
         {
             HexagonTiles[i].SetActive(false);
         }
@@ -115,10 +115,5 @@ public class HexagonGridSetup : MonoBehaviour
             GetComponent<Renderer>().material = TileMaterials[4];
             return false;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

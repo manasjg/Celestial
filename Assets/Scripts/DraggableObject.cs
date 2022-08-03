@@ -205,6 +205,7 @@ public class DraggableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         model.megaStructureData.gridHexID = gridHexID;
         model.megaStructureData.name = MegaStructure.name;
         model.megaStructureData.structureType = StructureData.StructureType;
+        model.megaStructureData.constructionSpeed = StructureData.ConstructionSpeed;
         MegaStructureManager.Instance.AddStructureToList(model);
         MegaStructureController controller = megaStructureGO.AddComponent<MegaStructureController>();
         megaStructureGO.GetComponent<BoxCollider>().enabled = true;
